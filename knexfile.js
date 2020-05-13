@@ -1,32 +1,29 @@
 // Update with your config settings.
 
+// module.exports = {
+
+//   development: {
+//     client: "sqlite3",
+//     connection: {
+//       filename: "./data/car-dealer.db3",
+//     },
+//     useNullAsDefault: true,
+//   },
+// };
+
+
 module.exports = {
-
   development: {
-    client: 'sqlite3',
+    client: "sqlite3", //driver to use
     connection: {
-      filename: './data/car-dealer.db3'
+      filename: "./data/car-dealer.db3"
     },
-    useNullAsDefault: true,
+    useNullAsDefault: true, //required for sqlite
     migrations: {
-      directory: './data/migrations',
+      directory: "./migrations"
     },
-  },
-
-
-  production: {
-    client: 'postgresql',
-    connection: {
-      filename: './data/car-dealer.db3'
-    },
-    useNullAsDefault: true,
-    pool: {
-      min: 2,
-      max: 10
-    },
-    migrations: {
-      tableName: 'cars_table'
+    seeds: {
+      directory: "./data/seeds"
     }
   }
-
 };
